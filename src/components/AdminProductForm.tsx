@@ -248,7 +248,7 @@ export default function AdminProductForm() {
                     type="button"
                     className="button secondary"
                     onClick={() => handleEditProduct(product)}
-                    style={{ padding: '8px 12px', fontSize: 14 }}
+                    style={{ padding: '10px 14px', fontSize: '0.95rem' }}
                   >
                     Edit
                   </button>
@@ -256,7 +256,7 @@ export default function AdminProductForm() {
                     type="button"
                     className="button secondary"
                     onClick={() => handleDeleteProduct(product.id)}
-                    style={{ padding: '8px 12px', fontSize: 14, color: '#dc2626' }}
+                    style={{ padding: '10px 14px', fontSize: '0.95rem', color: '#dc2626' }}
                   >
                     Delete
                   </button>
