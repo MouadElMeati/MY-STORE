@@ -72,4 +72,25 @@ export function addProduct(product: Omit<Product, 'id'> & { id?: number }): Prod
   return newProduct;
 }
 
+export function updateProduct(id: number, updates: Partial<Omit<Product, 'id'>>): Product | null {
+  const index = products.findIndex((p) => p.id === id);
+  if (index === -1) return null;
+
+  products[index] = { ...products[index], ...updates };
+  products = [...products];
+  persistProducts();
+  listeners.forEach((listener) => listener());
+  return products[index];
+}
+
+export function deleteProduct(id: number): boolean {
+  const index = products.findIndex((p) => p.id === id);
+  if (index === -1) return false;
+
+  products = products.filter((p) => p.id !== id);
+  persistProducts();
+  listeners.forEach((listener) => listener());
+  return true;
+}
+
 export default products;
