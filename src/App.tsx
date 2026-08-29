@@ -44,8 +44,11 @@ function App() {
       </Routes>
 
       <footer className="site-footer" aria-label="Site footer">
-        <div className="page" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:16}}>
-          <div>© {new Date().getFullYear()} The Loyalty Market</div>
+        <div className="page" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:16,flexWrap:'wrap'}}>
+          <div style={{display:'flex',gap:16,alignItems:'center',flexWrap:'wrap'}}>
+            <div>© {new Date().getFullYear()} The Loyalty Market</div>
+            <a href="https://www.linkedin.com/in/mouad-el-meati-b1088b254?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noreferrer" style={{color:'#64748b',fontSize:'0.9rem',textDecoration:'none',transition:'color 220ms ease'}} onMouseEnter={(e) => e.currentTarget.style.color = '#2563eb'} onMouseLeave={(e) => e.currentTarget.style.color = '#64748b'}>by Mouad El Meati</a>
+          </div>
           <nav className="footer-social" aria-label="Social links">
             <a href="https://twitter.com/" target="_blank" rel="noreferrer" className="social-link" aria-label="Twitter">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.43.36a9 9 0 0 1-2.86 1.1A4.5 4.5 0 0 0 16.11 0c-2.5 0-4.5 2.28-3.94 4.67A12.8 12.8 0 0 1 1.64.88 4.52 4.52 0 0 0 3.1 6.2 4.42 4.42 0 0 1 .88 5.7v.06A4.5 4.5 0 0 0 4.5 10.5a4.5 4.5 0 0 1-2 .08 4.5 4.5 0 0 0 4.2 3.13A9 9 0 0 1 1 19.54 12.7 12.7 0 0 0 7.29 21c8.86 0 13.71-7.57 13.71-14.12 0-.21 0-.42-.02-.63A9.8 9.8 0 0 0 23 3z" fill="currentColor"/></svg>
