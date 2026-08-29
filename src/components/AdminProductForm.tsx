@@ -146,7 +146,7 @@ export default function AdminProductForm() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
-            <button type="submit" className="button">Login</button>
+            <button type="submit" className="button" style={{ width: '100%', justifyContent: 'center' }}>Login</button>
             {message && <p style={{ margin: 0, color: '#0f172a' }}>{message}</p>}
           </form>
         </div>
@@ -156,9 +156,9 @@ export default function AdminProductForm() {
 
   return (
     <main className="page page-detail">
-      <div className="detail-body" style={{ maxWidth: 720, margin: '40px auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, marginBottom: 20 }}>
-          <h1 style={{ margin: 0 }}>{editingId ? 'Edit product' : 'Add a product'}</h1>
+      <div className="detail-body">
+        <div className="admin-header">
+          <h1>{editingId ? 'Edit product' : 'Add a product'}</h1>
           <button type="button" className="button secondary" onClick={handleLogout}>Logout</button>
         </div>
 
@@ -170,7 +170,7 @@ export default function AdminProductForm() {
             onChange={(event) => handleChange('name', event.target.value)}
           />
 
-          <div style={{ display: 'grid', gap: 16, gridTemplateColumns: '1fr 1fr' }}>
+          <div className="admin-form-row">
             <input
               className="filter-input"
               type="number"
@@ -216,7 +216,7 @@ export default function AdminProductForm() {
             onChange={(event) => handleChange('description', event.target.value)}
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div className="admin-form-row">
             <button type="submit" className="button">{editingId ? 'Update product' : 'Add product'}</button>
             {editingId && (
               <button type="button" className="button secondary" onClick={handleCancelEdit}>
@@ -230,35 +230,20 @@ export default function AdminProductForm() {
 
         <div style={{ marginTop: 40 }}>
           <h2>Products ({allProducts.length})</h2>
-          <div style={{ display: 'grid', gap: 12, marginTop: 16 }}>
+          <div className="admin-products-list">
             {allProducts.map((product) => (
-              <div
-                key={product.id}
-                style={{
-                  border: '1px solid rgba(2,6,23,0.06)',
-                  borderRadius: 12,
-                  padding: 16,
-                  display: 'grid',
-                  gridTemplateColumns: '80px 1fr auto',
-                  gap: 16,
-                  alignItems: 'center',
-                }}
-              >
+              <div key={product.id} className="admin-product-card">
                 <img
                   src={product.image}
                   alt={product.name}
-                  style={{ width: 80, height: 80, objectFit: 'cover', borderRadius: 8 }}
+                  className="admin-product-card-image"
                 />
-                <div>
-                  <h3 style={{ margin: '0 0 4px 0' }}>{product.name}</h3>
-                  <p style={{ margin: '0 0 4px 0', color: '#64748b', fontSize: 14 }}>
-                    ${product.price} • {product.category}
-                  </p>
-                  <p style={{ margin: 0, color: '#64748b', fontSize: 13 }}>
-                    {product.description.substring(0, 60)}...
-                  </p>
+                <div className="admin-product-card-info">
+                  <h3>{product.name}</h3>
+                  <p>${product.price} • {product.category}</p>
+                  <p>{product.description.substring(0, 60)}...</p>
                 </div>
-                <div style={{ display: 'flex', gap: 8 }}>
+                <div className="admin-product-card-actions">
                   <button
                     type="button"
                     className="button secondary"
