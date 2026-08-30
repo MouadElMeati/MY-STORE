@@ -28,6 +28,7 @@ const initialProducts: Product[] = [
   { id: 16, name: 'Body Lotion — Silk', price: 23, category: 'Beauty', image: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80', description: 'Fast-absorbing body lotion with subtle scent and deep hydration.' },
   { id: 17, name: 'Brow Pomade — Dark Brown', price: 18, category: 'Beauty', image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80', description: 'Waterproof pomade for precise brow shaping.' },
   { id: 18, name: 'Skincare Gift Set', price: 69, category: 'Beauty', image: 'https://images.unsplash.com/photo-1556228720-6c5a8b8c2f8b?auto=format&fit=crop&w=800&q=80', description: 'Three-step routine: cleanser, serum, and moisturizer.' },
+  { id: 19, name: 'Argan Oil Shampoo', price: 200, category: 'Beauty', image: 'https://images.unsplash.com/photo-1585869859568-a93eaa6fcb8d?auto=format&fit=crop&w=800&q=80', description: 'A nourishing shampoo enriched with argan oil that gently cleanses the hair while helping to moisturize dry hair, improve softness, and enhance natural shine.' },
 ];
 
 const readStoredProducts = (): Product[] => {
