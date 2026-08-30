@@ -3,6 +3,7 @@ import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
 import Carousel from './components/Carousel';
 import AdminProductForm from './components/AdminProductForm';
+import About from './components/About';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           </div>
           <nav className="nav">
             <Link to="/">Shop</Link>
-            <a href="#about">About</a>
+            <Link to="/about">About</Link>
           </nav>
         </div>
       </header>
@@ -40,6 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProductList />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/about" element={<About />} />
         <Route path="/admin/add-product" element={<AdminProductForm />} />
       </Routes>
 
